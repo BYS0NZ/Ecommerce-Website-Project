@@ -1,9 +1,11 @@
-import './header.css';
+import { Header } from '../components/Header';
 import './HomePage.css';
 
 export function HomePage() {
   return (
     <>
+      <Header />
+      
       <title>Ecommerce Project</title>
 
       <div className="header">
