@@ -13,6 +13,7 @@ export function HomePage() {
       });
   }, []);
 
+  
   return (
     <>
       <Header />
