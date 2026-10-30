@@ -127,12 +127,12 @@ export function CheckoutPage({ cart }) {
                             <>
                                 <div className="payment-summary-row">
                                     <div>Items ({paymentSummary.totalItems}):</div>
-                                    <div className="payment-summary-money">{paymentSummary.productCostCents / 100}</div>
+                                    <div className="payment-summary-money">${paymentSummary.productCostCents / 100}</div>
                                 </div>
 
                                 <div className="payment-summary-row">
                                     <div>Shipping &amp; handling:</div>
-                                    <div className="payment-summary-money">{paymentSummary.shippingCostCents / 100}</div>
+                                    <div className="payment-summary-money">${paymentSummary.shippingCostCents / 100}</div>
                                 </div>
 
                                 <div className="payment-summary-row subtotal-row">
