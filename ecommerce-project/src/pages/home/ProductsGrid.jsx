@@ -55,7 +55,7 @@ export function ProductsGrid( { products, loadCartData } ) {
                                 productId: product.id,
                                 quantity: 1
                             });
-                            
+                            await loadCartData();
                         }}>
                             Add to Cart
                         </button>
