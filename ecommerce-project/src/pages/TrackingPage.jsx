@@ -5,7 +5,7 @@ export function TrackingPage() {
     return (
         <>
             <Header />
-            <title>Tracking</title>
+            <title>Tracking Page</title>
 
             <div class="header">
                 <div class="left-section">
