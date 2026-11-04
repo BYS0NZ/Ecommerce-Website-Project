@@ -56,7 +56,7 @@ export function Product({ product, loadCartData }) {
                 onClick={async () => {
                     await axios.post("/api/cart-items", {
                         productId: product.id,
-                        quantity: quantity
+                        quantity
                     });
                     await loadCartData();
                 }}>
