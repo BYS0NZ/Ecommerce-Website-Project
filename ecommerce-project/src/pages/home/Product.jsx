@@ -4,6 +4,19 @@ import { useState } from "react";
 export function Product({ product, loadCartData }) {
     const [quantity, setQuantity] = useState(1);
 
+    const addToCart = async () => {
+        await axios.post("/api/cart-items", {
+            productId: product.id,
+            quantity
+        });
+        await loadCartData();
+    }
+
+    const handleQuantityChange = (event) => {
+        const newQuantity = Number(event.target.value);
+        setQuantity(newQuantity);
+    }
+
     return (
         <div className="product-container">
             <div className="product-image-container">
@@ -28,10 +41,7 @@ export function Product({ product, loadCartData }) {
             </div>
 
             <div className="product-quantity-container">
-                <select value={quantity} onChange={(event) => {
-                    const newQuantity = Number(event.target.value);
-                    setQuantity(newQuantity);
-                }}>
+                <select value={quantity} onChange={handleQuantityChange}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -53,13 +63,7 @@ export function Product({ product, loadCartData }) {
             </div>
 
             <button className="add-to-cart-button button-primary"
-                onClick={async () => {
-                    await axios.post("/api/cart-items", {
-                        productId: product.id,
-                        quantity
-                    });
-                    await loadCartData();
-                }}>
+                onClick={addToCart}>
                 Add to Cart
             </button>
         </div>
