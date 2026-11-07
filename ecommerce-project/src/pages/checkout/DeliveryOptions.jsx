@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import axios from 'axios';
 
-export function DeliveryOptions({ cartItem, deliveryOptions }) {
+export function DeliveryOptions({ cartItem, deliveryOptions, loadCartData }) {
     return (
         <div className="delivery-options">
             <div className="delivery-options-title">
@@ -19,9 +19,9 @@ export function DeliveryOptions({ cartItem, deliveryOptions }) {
                         deliveryOptionId: deliveryOption.id
                     });
                 };
-                
+
                 return (
-                    <div key={deliveryOption.id} className="delivery-option">
+                    <div key={deliveryOption.id} className="delivery-option" onClick={updateDeliveryOption}>
                         <input type="radio"
                             checked={cartItem.deliveryOptionId === deliveryOption.id}
                             className="delivery-option-input"
