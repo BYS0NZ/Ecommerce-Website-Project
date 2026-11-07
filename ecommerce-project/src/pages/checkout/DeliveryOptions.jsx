@@ -15,8 +15,11 @@ export function DeliveryOptions({ cartItem, deliveryOptions }) {
                 }
 
                 const updateDeliveryOption = async () => {
-                    axios.put(`/api/cart-items/${cartItem.productId}`, {});
-
+                    await axios.put(`/api/cart-items/${cartItem.productId}`, {
+                        deliveryOptionId: deliveryOption.id
+                    });
+                };
+                
                 return (
                     <div key={deliveryOption.id} className="delivery-option">
                         <input type="radio"
