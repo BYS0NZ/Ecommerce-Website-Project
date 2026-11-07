@@ -18,6 +18,7 @@ export function DeliveryOptions({ cartItem, deliveryOptions, loadCartData }) {
                     await axios.put(`/api/cart-items/${cartItem.productId}`, {
                         deliveryOptionId: deliveryOption.id
                     });
+                    await loadCartData();
                 };
 
                 return (
