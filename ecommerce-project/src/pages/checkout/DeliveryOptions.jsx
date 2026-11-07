@@ -15,7 +15,7 @@ export function DeliveryOptions({ cartItem, deliveryOptions }) {
                 }
 
                 const updateDeliveryOption = async () => {
-                    
+                    axios.put(`/api/cart-items/${cartItem.productId}`, {});
 
                 return (
                     <div key={deliveryOption.id} className="delivery-option">
