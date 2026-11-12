@@ -19,7 +19,7 @@ export function CheckoutPage({ cart , loadCartData }) {
         };
 
         fetchCheckoutData();
-    }, []);
+    }, [cart]);
 
     return (
         <>
