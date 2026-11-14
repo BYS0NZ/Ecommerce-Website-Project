@@ -7,6 +7,7 @@ export function PaymentSummary({ paymentSummary , loadCartData }) {
     const createOrder = async () => {
         await axios.post('/api/orders')
         await loadCartData();
+        navigate('/orders');
     }
 
     return (
