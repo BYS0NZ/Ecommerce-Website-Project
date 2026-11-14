@@ -42,7 +42,7 @@ export function PaymentSummary({ paymentSummary , loadCartData }) {
                         <div className="payment-summary-money">${paymentSummary.totalCostCents / 100}</div>
                     </div>
 
-                    <button className="place-order-button button-primary" onClickk={createOrder}>
+                    <button className="place-order-button button-primary" onClick={createOrder}>
                         Place your order
                     </button>
                 </>
