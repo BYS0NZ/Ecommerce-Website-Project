@@ -3,7 +3,7 @@ import axios from "axios";
 export function PaymentSummary({ paymentSummary , loadCartData }) {
     const createOrder = async () => {
         await axios.post('/api/orders')
-        
+        await loadCartData();
     }
 
     return (
